@@ -1,19 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Cats from '../components/cats/Cats';
+
+const myCats = [
+  {id: 'cat1', name: 'Fluffy', imageUrl: 'https://www.telegraph.co.uk/content/dam/pets/2017/01/06/1-JS117202740-yana-two-face-cat-news_trans_NvBQzQNjv4BqJNqHJA5DVIMqgv_1zKR2kxRY9bnFVTp4QZlQjJfe6H0.jpg?imwidth=450', description: 'SO FLUFFY'},
+  {id: 'cat2', name: 'George', imageUrl: 'https://www.telegraph.co.uk/content/dam/pets/2017/01/06/1-JS117202740-yana-two-face-cat-news_trans_NvBQzQNjv4BqJNqHJA5DVIMqgv_1zKR2kxRY9bnFVTp4QZlQjJfe6H0.jpg?imwidth=450', description: 'SO FLUFFY'},
+  {id: 'cat3', name: 'Steve', imageUrl: 'https://www.telegraph.co.uk/content/dam/pets/2017/01/06/1-JS117202740-yana-two-face-cat-news_trans_NvBQzQNjv4BqJNqHJA5DVIMqgv_1zKR2kxRY9bnFVTp4QZlQjJfe6H0.jpg?imwidth=450', description: 'SO FLUFFY'},
+  {id: 'cat4', name: 'Ralph', imageUrl: 'https://www.telegraph.co.uk/content/dam/pets/2017/01/06/1-JS117202740-yana-two-face-cat-news_trans_NvBQzQNjv4BqJNqHJA5DVIMqgv_1zKR2kxRY9bnFVTp4QZlQjJfe6H0.jpg?imwidth=450', description: 'SO FLUFFY'},
+  {id: 'cat5', name: 'Killer', imageUrl: 'https://www.telegraph.co.uk/content/dam/pets/2017/01/06/1-JS117202740-yana-two-face-cat-news_trans_NvBQzQNjv4BqJNqHJA5DVIMqgv_1zKR2kxRY9bnFVTp4QZlQjJfe6H0.jpg?imwidth=450', description: 'SO FLUFFY'},
+];
+
 class App extends React.Component {
+  state = {
+    cats: [],
+  };
+
+  componentDidMount () {
+    this.setState({cats: myCats});
+  }
+
   render () {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">My Cats</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button className="btn btn-danger">ima button</button>
+        <Cats cats={this.state.cats}/>
       </div>
     );
   }
