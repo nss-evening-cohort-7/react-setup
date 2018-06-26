@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends React.Component {
-  render() {
+  render () {
     return (
       <div className="App">
         <header className="App-header">
